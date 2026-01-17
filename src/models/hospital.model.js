@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+import mongoose, {Schema} from "mongoose";
+
 const hospitalSchmea =new mongoose.Schmea({
     name:{
         type:String,
@@ -22,9 +23,11 @@ const hospitalSchmea =new mongoose.Schmea({
     },
     specialisation:[
         {
-        type:String
-        } ,
-   ],
+            type:String,
+            required:true
+        } 
+    ],
+
 },{timestamps:true})
 
 export const hospital= mongoose.model("hospital",hospitalSchmea)

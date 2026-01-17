@@ -1,14 +1,14 @@
-import mongoose from "mongoose"
+import mongoose, {Schema}  from "mongoose"
 
-const patientSchmea =new mongoose.Schmea({
+const helperSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,
     },
-    diagonsedWith:{
+    emailId:{
         type:String,
-        required:true
-    }, 
+        require:true
+    },
     address:{
         type:String,
         required:true
@@ -26,14 +26,17 @@ const patientSchmea =new mongoose.Schmea({
         enum:["Male","Female","Other"],
         required:true
     },
-    addmittedIn:{
-        type:mongoose.Schema.Type.ObjectId,
-        ref:"hospital"
-    },
-    number:{
+    contactNumber:{
       type:Number,
       required:true
+    },
+    experinceinYears:{
+        type:Number,
+        default:0
+    },
+    role:{
+        type:[ "StaffBoy", "Nurse" ],
+        required: true
     }
-},{timestamps:true})
-
-export const patient= mongoose.model("patient",patientSchmea)
+    }
+)

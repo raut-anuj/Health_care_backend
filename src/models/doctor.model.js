@@ -1,10 +1,7 @@
-
-
-
-import mongoose from "mongoose"
+import mongoose, {Schema}  from "mongoose"
 
 const doctorSchema=new mongoose.Schema({
-    name:{
+    drname:{
         type:String,
         required:true,
     },
@@ -42,10 +39,10 @@ const doctorSchema=new mongoose.Schema({
         enum:["Male","Female","Other"],
         required:true
     },
-    number:{
+    contactNumber:{
       type:Number,
       required:true
     }
 },{timestamps:true})
 
-export const doctor=mongoose.model("doctor",doctorSchema)
+export const Doctor=mongoose.model("Doctor",doctorSchema)

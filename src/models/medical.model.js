@@ -1,6 +1,6 @@
-import mongoose from "mongoose"
+import mongoose, {Schema}  from "mongoose"
 
-const medicalSchmea =new mongoose.Schmea({
+const medical_recordSchmea =new mongoose.Schmea({
     name:{
         type:String,
         required:true,
@@ -13,12 +13,11 @@ const medicalSchmea =new mongoose.Schmea({
         type:mongoose.Schmea.Types.ObjectId,
         ref:"hospital"
     },
-    diagonesdwith:{
+    record_photo:{
         type:String,
-        required:true,
+        //required:true,
     },
 
 },{timestamps:true})
 
-export const medical= mongoose.model("medical",medicalSchmea)
-
+export const record= mongoose.model("record",medical_recordSchmea)
